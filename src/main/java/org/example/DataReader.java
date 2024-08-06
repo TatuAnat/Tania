@@ -36,10 +36,6 @@ public class DataReader {
                 students.add(new Student(fullName, universityCode, currentCourseNumber,getAvgExamScore));
             }
 
-
-
-
-
         return students;
     }
 
@@ -54,7 +50,6 @@ public class DataReader {
            iter.next();
        }
 
-
         while (iter.hasNext()){
             Row row = iter.next();
 
@@ -67,8 +62,6 @@ public class DataReader {
             StudyProfile mainProfile =StudyProfile.valueOf(row.getCell(4).getStringCellValue());
 
             univercity.add(new Univercity(universityCode, fullName, shortName,yearsOfFoundation, mainProfile));
-
-
         }
         
     return univercity;
