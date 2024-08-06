@@ -1,7 +1,7 @@
 package org.example;
 
-public enum StudentComparatorType {
-    AVG_SCORE,
-    AVG_SCORE_DESC,
-    FULLNAME
+public enum StudentComparatorTypeEnum {
+    avgScore,
+    avgScoreDesc,
+    fullName
 }
