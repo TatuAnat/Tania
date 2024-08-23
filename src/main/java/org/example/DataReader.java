@@ -6,13 +6,11 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Comparator;
+
 public class DataReader {
 
     public DataReader() {}
@@ -39,8 +37,8 @@ public class DataReader {
         return students;
     }
 
-    public static List<Univercity> readUnivercity (String file) throws IOException{
-        List<Univercity> univercity = new ArrayList<>();
+    public static List<University> readUnivercity (String file) throws IOException{
+        List<University> university = new ArrayList<>();
         FileInputStream f1 = new FileInputStream(file);
         Workbook workbook = new XSSFWorkbook(f1);
         Sheet sheet = workbook.getSheetAt(1);
@@ -61,9 +59,9 @@ public class DataReader {
 
             StudyProfile mainProfile =StudyProfile.valueOf(row.getCell(4).getStringCellValue());
 
-            univercity.add(new Univercity(universityCode, fullName, shortName,yearsOfFoundation, mainProfile));
+            university.add(new University(universityCode, fullName, shortName,yearsOfFoundation, mainProfile));
         }
         
-    return univercity;
+    return university;
     }
 }

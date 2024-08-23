@@ -17,7 +17,7 @@ public class ComparatorUtils {
 
         };
     }
-    public static Comparator <Univercity> getUniversityComparator (UniversityComparatorTypeEnum type1){
+    public static Comparator <University> getUniversityComparator (UniversityComparatorTypeEnum type1){
         switch (type1){
             case fullName:
                 return  new UniversityFullNameComparator();

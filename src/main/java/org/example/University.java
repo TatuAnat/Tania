@@ -1,15 +1,13 @@
 package org.example;
 
-import org.example.StudyProfile;
-
-public class Univercity {
+public class University {
     String id;
     String fullName;
     String shortName;
     int yearOfFoundation;
     StudyProfile mainProfile;
 
-    public Univercity(String id, String fullName, String shortName, int yearOfFoundation, StudyProfile mainProfile) {
+    public University(String id, String fullName, String shortName, int yearOfFoundation, StudyProfile mainProfile) {
         this.id = id;
         this.fullName = fullName;
         this.shortName = shortName;
@@ -17,27 +15,27 @@ public class Univercity {
         this.mainProfile = mainProfile;
     }
 
-    public Univercity setId(String id) {
+    public University setId(String id) {
         this.id = id;
         return this;
     }
 
-    public Univercity setFullName(String fullName) {
+    public University setFullName(String fullName) {
         this.fullName = fullName;
         return this;
     }
 
-    public Univercity setShortName(String shortName) {
+    public University setShortName(String shortName) {
         this.shortName = shortName;
         return this;
     }
 
-    public Univercity setYearOfFoundation(int yearOfFoundation) {
+    public University setYearOfFoundation(int yearOfFoundation) {
         this.yearOfFoundation = yearOfFoundation;
         return this;
     }
 
-    public Univercity setMainProfile(StudyProfile mainProfile) {
+    public University setMainProfile(StudyProfile mainProfile) {
         this.mainProfile = mainProfile;
         return this;
     }
