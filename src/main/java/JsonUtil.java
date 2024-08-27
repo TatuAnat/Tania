@@ -8,12 +8,8 @@ import java.util.List;
 
 public class JsonUtil  {
 
-
-
     private JsonUtil(){
-
     }
-
 
     public static String serializeStudent(Student student){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
