@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.Student;
+
 import java.util.Comparator;
 
 public class StudentAvgExamScoreDescComparator implements Comparator<Student> {

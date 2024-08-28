@@ -36,12 +36,36 @@ public class XlsWriter {
             cell.setCellStyle(headerStyle);
         }
 
+        for(int i = 0; i< statisticsList.size(); i++){
+            Statistics statistics = statisticsList.get(i);
+            Row statisticsRow = sheet.createRow(i+1);
+            Cell cellProfile = statisticsRow.createCell(0);
+            cellProfile.setCellValue(statistics.getProfile());
+            Cell cellAvgScore = statisticsRow.createCell(1);
+           cellAvgScore .setCellValue(statistics.getAverageExamScore());
+            Cell cellNumStudents = statisticsRow.createCell(2);
+            cellNumStudents.setCellValue(statistics.getNumberOfStudents());
+            Cell cellNumUniversities = statisticsRow.createCell(3);
+            cellNumUniversities.setCellValue(statistics.getNumberOfUniversities());
+            Cell cellUniversityNames = statisticsRow.createCell(4);
+            cellUniversityNames.setCellValue(statistics.getUniversityNames().toString());
+        }
 
 
-        FileOutputStream fileOut = new FileOutputStream(pathFile);
 
-            workbook.write(fileOut);
-            workbook.close();
+      try  (FileOutputStream fileOut = new FileOutputStream(pathFile)) {
+
+          workbook.write(fileOut);
+      }catch (IOException e){
+          System.out.println(e.getMessage());
+      }
+      try {
+
+
+          workbook.close();
+      } catch (IOException e){
+          System.out.println(e.getMessage());
+      }
 
         }
 

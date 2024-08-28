@@ -1,9 +1,10 @@
 import org.example.*;
 
 import java.io.IOException;
-import java.util.ArrayList;
+
 import java.util.Comparator;
 import java.util.List;
+
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -33,17 +34,17 @@ public class Main {
 
 
         for (Student student : sortedStudents) {
-           System.out.println(student.toString());
+            System.out.println(student.toString());
         }
 
 
         for (University university : universities) {
-           System.out.println(university.toString());
+            System.out.println(university.toString());
         }
 
 
         for (University university : sortedUniversities) {
-          System.out.println(university.toString());
+            System.out.println(university.toString());
 
 
         }
@@ -53,7 +54,7 @@ public class Main {
 
         String oneStudentJson = JsonUtil.serializeStudent(oneStudent);
 
-     System.out.println(oneStudentJson);
+        System.out.println(oneStudentJson);
 
         String studentListJson = JsonUtil.serializeListStudents(students);
 
@@ -61,23 +62,18 @@ public class Main {
         Student oneStudentDeserialized = JsonUtil.deserializeStudent(oneStudentJson);
 
 
-
         List<Student> listStudentDeserialized = JsonUtil.deserializeStudentList(studentListJson);
 
 
-        //сохраняешь джсон в переменную
-       students.stream()
+        students.stream()
                 .map(JsonUtil::serializeStudent)
                 .forEach(System.out::println);
-        //сохраненный джсон переводить в объект джавовый (в студент)
-        //распечать все поля протестировать что все ок
-        //сделать в цикле фор и не переживай плиз
 
-            System.out.println(oneStudentDeserialized);
-            for (int i =0; i< listStudentDeserialized.size(); i++){
-                System.out.println(listStudentDeserialized.get(i));
-            }
-
+        System.out.println(oneStudentDeserialized);
+        System.out.println(listStudentDeserialized);
+        for (int i = 0; i < listStudentDeserialized.size(); i++) {
+            System.out.println(listStudentDeserialized.get(i));
+        }
 
 
         University oneUniversity = universities.get(0);
@@ -88,8 +84,8 @@ public class Main {
         University oneUniversityDeserialized = JsonUtil.deserializeUniversity(oneUniversityJson);
         System.out.println(oneUniversityDeserialized);
 
-        List <University>  listUniversityDeserialized =JsonUtil.deserializeUnivercityList(universityListJson);
-        for (int i=0; i<listUniversityDeserialized.size(); i++){
+        List<University> listUniversityDeserialized = JsonUtil.deserializeUnivercityList(universityListJson);
+        for (int i = 0; i < listUniversityDeserialized.size(); i++) {
             System.out.println(listUniversityDeserialized.get(i));
 
         }
@@ -97,9 +93,10 @@ public class Main {
                 .map(JsonUtil::serializeUniversity)
                 .forEach(System.out::println);
 
-        List<Statistics> statisticsList = new ArrayList<>();
 
+        StatisticsUtils statisticsUtils = new StatisticsUtils();
+        List<Statistics> statisticsList = statisticsUtils.generateStatistics(students, universities);
 
         XlsWriter.writeStatisticsToExcel(statisticsList, pathStatistics);
     }
-    }
+}

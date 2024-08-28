@@ -53,4 +53,12 @@ public static  List <University> deserializeUnivercityList(String universityList
 }
 
 
+    public enum UniversityComparatorTypeEnum {
+        fullName,
+        yearOfFoundation,
+        YearOfFoundationDesc
+
+
+
+    }
 }
