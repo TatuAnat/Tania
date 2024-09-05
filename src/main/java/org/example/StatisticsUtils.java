@@ -1,5 +1,8 @@
 package org.example;
 
+import org.example.student.Student;
+import org.example.university.University;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

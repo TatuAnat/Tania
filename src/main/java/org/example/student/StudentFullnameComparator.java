@@ -1,7 +1,7 @@
-package org.example;
+package org.example.student;
 
 import org.apache.commons.lang3.StringUtils;
-import org.example.Student;
+import org.example.student.Student;
 
 import java.util.Comparator;
 

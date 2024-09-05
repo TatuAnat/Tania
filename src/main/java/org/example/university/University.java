@@ -1,4 +1,6 @@
-package org.example;
+package org.example.university;
+
+import org.example.StudyProfile;
 
 public class University {
     String id;

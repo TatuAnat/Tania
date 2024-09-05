@@ -1,4 +1,4 @@
-package org.example;
+package org.example.university;
 
 public enum UniversityComparatorTypeEnum {
     fullName,

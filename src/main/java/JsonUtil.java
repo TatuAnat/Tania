@@ -1,7 +1,7 @@
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import org.example.Student;
-import org.example.University;
+import org.example.student.Student;
+import org.example.university.University;
 
 import java.util.List;
 

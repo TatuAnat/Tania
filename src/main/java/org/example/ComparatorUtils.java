@@ -1,5 +1,8 @@
 package org.example;
 
+import org.example.student.*;
+import org.example.university.*;
+
 import java.util.Comparator;
 
 public class ComparatorUtils {

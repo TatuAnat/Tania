@@ -1,4 +1,4 @@
-package org.example;
+package org.example.student;
 
 import com.google.gson.annotations.SerializedName;
 

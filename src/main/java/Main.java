@@ -1,4 +1,8 @@
 import org.example.*;
+import org.example.student.Student;
+import org.example.student.StudentComparatorTypeEnum;
+import org.example.university.University;
+import org.example.university.UniversityComparatorTypeEnum;
 
 import java.io.IOException;
 

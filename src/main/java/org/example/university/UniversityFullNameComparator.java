@@ -1,6 +1,7 @@
-package org.example;
+package org.example.university;
 
 import org.apache.commons.lang3.StringUtils;
+import org.example.university.University;
 
 import java.util.Comparator;
 

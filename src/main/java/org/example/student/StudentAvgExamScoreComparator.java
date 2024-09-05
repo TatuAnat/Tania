@@ -1,6 +1,6 @@
-package org.example;
+package org.example.student;
 
-import org.example.Student;
+import org.example.student.Student;
 
 import java.util.Comparator;
 
