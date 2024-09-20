@@ -1,15 +1,20 @@
 package org.example.student;
 
 import com.google.gson.annotations.SerializedName;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 public class Student {
-
     @SerializedName("full_name")
     String fullName;
+
     String universityId;
     int currentCourseNumber;
     float avgExamScore;
 
+    // No-argument constructor is required for JAXB
+    public Student() {}
 
     public Student(String fullName, String universityId, int currentCourseNumber, float avgExamScore) {
         this.fullName = fullName;
@@ -38,17 +43,21 @@ public class Student {
         return this;
     }
 
+    @XmlElement
     public String getFullName() {
         return fullName;
     }
 
+    @XmlElement
     public String getUniversityId() {
         return universityId;
     }
 
+    @XmlElement
     public int getCurrentCourseNumber() {
         return currentCourseNumber;
     }
+
 
     public float getAvgExamScore() {
         return avgExamScore;
@@ -64,5 +73,4 @@ public class Student {
                 '}';
     }
 
-    }
-
+}

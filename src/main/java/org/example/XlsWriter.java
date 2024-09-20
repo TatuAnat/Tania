@@ -7,6 +7,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
+import java.util.logging.*;
+
 public class XlsWriter {
 
     private XlsWriter(){
@@ -57,14 +59,15 @@ public class XlsWriter {
 
           workbook.write(fileOut);
       }catch (IOException e){
-          System.out.println(e.getMessage());
+          Logger logger = Logger.getLogger(XlsWriter.class.getName());
+        logger.log(Level.SEVERE, "oshibka file", e);
       }
       try {
 
 
           workbook.close();
       } catch (IOException e){
-          System.out.println(e.getMessage());
+          //System.out.println(e.getMessage());
       }
 
         }

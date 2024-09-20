@@ -1,3 +1,5 @@
+package org.example;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.example.student.Student;
@@ -11,6 +13,10 @@ public class JsonUtil  {
     private JsonUtil(){
     }
 
+    public static String serializeObject(Object student){
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        return gson.toJson(student);
+    }
     public static String serializeStudent(Student student){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         return gson.toJson(student);
@@ -20,6 +26,10 @@ public static String serializeUniversity(University university){
         return gson.toJson(university);
 }
 
+    public static String serializeListObjects(List<Object> studentList){
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        return gson.toJson(studentList);
+    }
 
 
     public static String serializeListStudents(List<Student> studentList){

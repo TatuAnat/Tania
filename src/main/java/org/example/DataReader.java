@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class DataReader {
 
@@ -19,12 +20,12 @@ public class DataReader {
 
     public static List<Student> readStudents(String file) throws IOException {
         List<Student> students = new ArrayList<>();
+        Logger logger = Logger.getLogger(DataReader.class.getName());
+        logger.info("readStudents method");
 
-
-                FileInputStream f = new FileInputStream(file);
-                Workbook workbook = new XSSFWorkbook(f);
-
-
+        try{
+            FileInputStream f = new FileInputStream(file);
+            Workbook workbook = new XSSFWorkbook(f);
             Sheet sheet = workbook.getSheetAt(0);
 
             for (Row row: sheet){
@@ -35,6 +36,10 @@ public class DataReader {
                 float getAvgExamScore = (float) row.getCell(3).getNumericCellValue();
                 students.add(new Student(fullName, universityCode, currentCourseNumber,getAvgExamScore));
             }
+        }catch (IOException e){
+            logger.severe("ERROR READ FILE: " + e.getMessage() );
+        }
+
 
         return students;
     }

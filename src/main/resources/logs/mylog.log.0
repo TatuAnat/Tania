@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-09-17T18:54:48.554277900Z</date>
+  <millis>1726599288554</millis>
+  <nanos>277900</nanos>
+  <sequence>0</sequence>
+  <logger>Main</logger>
+  <level>SEVERE</level>
+  <class>Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>tania log</message>
+</record>
+<record>
+  <date>2024-09-17T18:54:48.610781500Z</date>
+  <millis>1726599288610</millis>
+  <nanos>781500</nanos>
+  <sequence>1</sequence>
+  <logger>Main</logger>
+  <level>INFO</level>
+  <class>Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>start read students from C:\Users\hp\Test\project\src\main\resources\universityInfo.xlsx</message>
+</record>
+<record>
+  <date>2024-09-17T18:54:48.614307300Z</date>
+  <millis>1726599288614</millis>
+  <nanos>307300</nanos>
+  <sequence>2</sequence>
+  <logger>org.example.DataReader</logger>
+  <level>INFO</level>
+  <class>org.example.DataReader</class>
+  <method>readStudents</method>
+  <thread>1</thread>
+  <message>readStudents method</message>
+</record>
+<record>
+  <date>2024-09-17T18:54:49.362046Z</date>
+  <millis>1726599289362</millis>
+  <nanos>46000</nanos>
+  <sequence>3</sequence>
+  <logger>Main</logger>
+  <level>INFO</level>
+  <class>Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>finish read students from C:\Users\hp\Test\project\src\main\resources\universityInfo.xlsx</message>
+</record>
+</log>
