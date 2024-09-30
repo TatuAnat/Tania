@@ -79,16 +79,14 @@ public class Main {
         Student oneStudentDeserialized = JsonUtil.deserializeStudent(oneStudentJson);
         List<Student> listStudentDeserialized = JsonUtil.deserializeStudentList(studentListJson);
 
-/*
         students.stream()
                 .map(org.example.JsonUtil::serializeStudent)
-                .forEach(System.out::println)
-        ;
-*/
-        ////System.out.println(oneStudentDeserialized);
-        ////System.out.println(listStudentDeserialized);
+                .forEach(System.out::println);
+
+        System.out.println(oneStudentDeserialized);
+        System.out.println(listStudentDeserialized);
         for (int i = 0; i < listStudentDeserialized.size(); i++) {
-            ////System.out.println(listStudentDeserialized.get(i));
+            System.out.println(listStudentDeserialized.get(i));
         }
 
         University oneUniversity = universities.get(0);
