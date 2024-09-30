@@ -98,7 +98,6 @@ public class Main {
         System.out.println(universityListJson);
         University oneUniversityDeserialized = JsonUtil.deserializeUniversity(oneUniversityJson);
         System.out.println(oneUniversityDeserialized);
-
         List<University> listUniversityDeserialized = JsonUtil.deserializeUnivercityList(universityListJson);
         for (int i = 0; i < listUniversityDeserialized.size(); i++) {System.out.println(listUniversityDeserialized.get(i));
         }
