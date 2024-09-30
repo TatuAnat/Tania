@@ -39,36 +39,26 @@ public class Main {
                 .sorted(studentComparator)
                 .toList();
 
-
-
         List<University> universities = DataReader.readUnivercity(path);
         List<University> sortedUniversities = universities
                 .stream()
                 .sorted(univercityComparator)
                 .toList();
-
-
         for (Student student : students) {
-            ////System.out.println(student.toString());
+            System.out.println(student.toString());
         }
-
 
         for (Student student : sortedStudents) {
-            ////System.out.println(student.toString());
+            System.out.println(student.toString());
         }
-
 
         for (University university : universities) {
-            ////System.out.println(university.toString());
+            System.out.println(university.toString());
         }
-
 
         for (University university : sortedUniversities) {
-            ////System.out.println(university.toString());
-
-
+            System.out.println(university.toString());
         }
-
 
         Student oneStudent = students.get(0);
 
@@ -83,17 +73,10 @@ public class Main {
             logger.severe("ERROR write JSON: " +e.getMessage());
         }
 
-
         String oneStudentJson = JsonUtil.serializeStudent(oneStudent);
-
-        ////System.out.println(oneStudentJson);
-
+        System.out.println(oneStudentJson);
         String studentListJson = JsonUtil.serializeListStudents(students);
-
-
         Student oneStudentDeserialized = JsonUtil.deserializeStudent(oneStudentJson);
-
-
         List<Student> listStudentDeserialized = JsonUtil.deserializeStudentList(studentListJson);
 
 /*
@@ -108,25 +91,20 @@ public class Main {
             ////System.out.println(listStudentDeserialized.get(i));
         }
 
-
         University oneUniversity = universities.get(0);
         String oneUniversityJson = JsonUtil.serializeUniversity(oneUniversity);
-        ////System.out.println(oneUniversityJson);
+        System.out.println(oneUniversityJson);
         String universityListJson = JsonUtil.serializeListUniversities(universities);
-        ////System.out.println(universityListJson);
+        System.out.println(universityListJson);
         University oneUniversityDeserialized = JsonUtil.deserializeUniversity(oneUniversityJson);
-        ////System.out.println(oneUniversityDeserialized);
+        System.out.println(oneUniversityDeserialized);
 
         List<University> listUniversityDeserialized = JsonUtil.deserializeUnivercityList(universityListJson);
-        for (int i = 0; i < listUniversityDeserialized.size(); i++) {
-            ////System.out.println(listUniversityDeserialized.get(i));
-
+        for (int i = 0; i < listUniversityDeserialized.size(); i++) {System.out.println(listUniversityDeserialized.get(i));
         }
-       /* universities.stream()
+       universities.stream()
                 .map(org.example.JsonUtil::serializeUniversity)
-                .forEach(System.out::println);*/
-
-
+                .forEach(System.out::println);
         StatisticsUtils statisticsUtils = new StatisticsUtils();
         List<Statistics> statisticsList = statisticsUtils.generateStatistics(students, universities);
 

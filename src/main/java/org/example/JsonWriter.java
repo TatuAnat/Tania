@@ -14,39 +14,20 @@ import java.util.List;
 
 public class JsonWriter {
     public static void writeToJson(Object object, String directory) throws Exception {
-
-
-        //ObjectMapper mapper = new ObjectMapper();
-
-        //Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        //String json =  gson.toJson(object);
-
         String json = JsonUtil.serializeObject(object);
-
         String fileName = directory + "/req_" + new SimpleDateFormat("yyyyMMddHHmmss")
                 .format(new Date()) + ".json";
 
         File file = new File(fileName);
         file.getParentFile().mkdirs();
 
-
-       // mapper.writerWithDefaultPrettyPrinter().writeValue(file, object);
-
         try(FileWriter fileWriter = new FileWriter(fileName)){
             fileWriter.write(json);
         }
-
         System.out.println("JSON written to: " + fileName);
-
     }
 
     public static void writeToJsonList(List<Object> list, String directory) throws Exception {
-
-
-        //ObjectMapper mapper = new ObjectMapper();
-
-        //Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        //String json =  gson.toJson(object);
 
         String json = JsonUtil.serializeListObjects(list);
 
@@ -55,10 +36,6 @@ public class JsonWriter {
 
         File file = new File(fileName);
         file.getParentFile().mkdirs();
-
-
-        // mapper.writerWithDefaultPrettyPrinter().writeValue(file, object);
-
         try(FileWriter fileWriter = new FileWriter(fileName)){
             fileWriter.write(json);
         }

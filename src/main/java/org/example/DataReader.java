@@ -39,11 +39,8 @@ public class DataReader {
         }catch (IOException e){
             logger.severe("ERROR READ FILE: " + e.getMessage() );
         }
-
-
         return students;
     }
-
     public static List<University> readUnivercity (String file) throws IOException{
         List<University> university = new ArrayList<>();
         FileInputStream f1 = new FileInputStream(file);
@@ -54,7 +51,6 @@ public class DataReader {
        if(iter.hasNext()){
            iter.next();
        }
-
         while (iter.hasNext()){
             Row row = iter.next();
 
@@ -62,13 +58,9 @@ public class DataReader {
             String fullName = row.getCell(1).getStringCellValue();
             String shortName = row.getCell(2).getStringCellValue();
             int yearsOfFoundation = (int) row.getCell(3).getNumericCellValue();
-           // StudyProfile mainProfile = (StudyProfile) row.getCell(4).getStringCellValue();
-
             StudyProfile mainProfile =StudyProfile.valueOf(row.getCell(4).getStringCellValue());
-
             university.add(new University(universityCode, fullName, shortName,yearsOfFoundation, mainProfile));
         }
-        
     return university;
     }
 }

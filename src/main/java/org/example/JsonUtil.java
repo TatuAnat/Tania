@@ -9,10 +9,8 @@ import java.util.List;
 
 
 public class JsonUtil  {
-
     private JsonUtil(){
     }
-
     public static String serializeObject(Object student){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         return gson.toJson(student);
@@ -25,13 +23,10 @@ public static String serializeUniversity(University university){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         return gson.toJson(university);
 }
-
     public static String serializeListObjects(List<Object> studentList){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         return gson.toJson(studentList);
     }
-
-
     public static String serializeListStudents(List<Student> studentList){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         return gson.toJson(studentList);
@@ -40,12 +35,10 @@ public static String serializeListUniversities(List<University> universityList){
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
     return gson.toJson(universityList);
 }
-
     public static Student deserializeStudent(String studentJson){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         return gson.fromJson(studentJson, Student.class);
     }
-
     public static List deserializeStudentList(String studentListJson){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         return gson.fromJson(studentListJson, List.class);
